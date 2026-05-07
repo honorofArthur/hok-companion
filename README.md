@@ -1,4 +1,4 @@
-# Honor Of Kings companion
+# Honor of Kings companion
 
 English companion website for the Chinese version of Honor of Kings.
 
@@ -17,3 +17,8 @@ Early development. Item data is incomplete.
 - `style.css` — visual styling
 - `script.js` — item data, rendering, filters, sorting, comparison
 - `images/` — item icons
+
+## Preview
+
+![Filters](screenshots/filter.png)
+![Items](screenshots/items.png)
