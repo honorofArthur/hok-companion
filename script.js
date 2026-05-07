@@ -6,6 +6,9 @@ const categoryButtons = document.querySelectorAll(".category-button");
 const itemGrid = document.querySelector(".item-grid");
 const itemInspector = document.querySelector(".item-inspector");
 
+const compareButton = document.getElementById("compare-button");
+const compareInspector = document.getElementById("compare-inspector");
+
 const primarySort = document.getElementById("primary-sort-stat");
 const secondarySort = document.getElementById("secondary-sort-stat");
 const sortDirectionSelect = document.getElementById("sort-direction");
@@ -13,6 +16,8 @@ const sortDirectionSelect = document.getElementById("sort-direction");
 const resetFiltersButton = document.getElementById("reset-filters-button");
 
 let currentCategory = "All";
+let selectedItem = null;
+let comparisonItem = null;
 
 
 /* ================================
@@ -66,38 +71,39 @@ function displayItems(itemsToShow) {
       <p class="item-summary">${item.summary}</p>
 
       <div class="stat-chip-row">
-  ${(item.chips || []).map(function(chip, index) {
-    const hiddenClass = index >= 4 ? "hidden-chip" : "";
+        ${(item.chips || []).map(function(chip, index) {
+          const hiddenClass = index >= 4 ? "hidden-chip" : "";
 
-    return `<span class="stat-chip ${hiddenClass}">${chip}</span>`;
-  }).join("")}
+          return `<span class="stat-chip ${hiddenClass}">${chip}</span>`;
+        }).join("")}
 
-  ${(item.chips || []).length > 4
-    ? `<button class="stat-chip more-chip" type="button">
-        +${item.chips.length - 4} more
-      </button>`
-    : ""}
-</div>
+        ${(item.chips || []).length > 4
+          ? `<button class="stat-chip more-chip" type="button">
+              +${item.chips.length - 4} more
+            </button>`
+          : ""}
+      </div>
     `;
 
-const moreChipButton = itemCard.querySelector(".more-chip");
-const hiddenChips = itemCard.querySelectorAll(".hidden-chip");
+    const moreChipButton = itemCard.querySelector(".more-chip");
+    const hiddenChips = itemCard.querySelectorAll(".hidden-chip");
 
-if (moreChipButton) {
-  moreChipButton.addEventListener("click", function(event) {
-    event.stopPropagation();
+    if (moreChipButton) {
+      moreChipButton.addEventListener("click", function(event) {
+        event.stopPropagation();
 
-    itemCard.classList.toggle("show-all-chips");
+        itemCard.classList.toggle("show-all-chips");
 
-    if (itemCard.classList.contains("show-all-chips")) {
-      moreChipButton.textContent = "Show less";
-    } else {
-      moreChipButton.textContent = `+${hiddenChips.length} more`;
+        if (itemCard.classList.contains("show-all-chips")) {
+          moreChipButton.textContent = "Show less";
+        } else {
+          moreChipButton.textContent = `+${hiddenChips.length} more`;
+        }
+      });
     }
-  });
-}
 
     itemCard.addEventListener("click", function() {
+      selectedItem = item;
       showItemInspector(item);
     });
 
@@ -107,15 +113,15 @@ if (moreChipButton) {
 
 
 /* ================================
-   SIDE INSPECTOR
+   INSPECTOR TEMPLATE
 ================================ */
 
-function showItemInspector(item) {
+function buildInspectorHTML(item) {
   const passiveText = item.passive || "";
   const passiveText2 = item.passive2 || "";
   const activeText = item.active || "";
 
-  itemInspector.innerHTML = `
+  return `
     <div class="inspector-header">
       <img class="inspector-icon" src="${item.image}" alt="${item.name} icon">
 
@@ -159,6 +165,15 @@ function showItemInspector(item) {
       }).join("")}
     </div>
   `;
+}
+
+
+/* ================================
+   SIDE INSPECTOR
+================================ */
+
+function showItemInspector(item) {
+  itemInspector.innerHTML = buildInspectorHTML(item);
 
   itemInspector.classList.remove("is-open");
   void itemInspector.offsetWidth;
@@ -167,6 +182,8 @@ function showItemInspector(item) {
 
 
 function resetInspector() {
+  selectedItem = null;
+
   itemInspector.innerHTML = `
     <div class="inspector-placeholder">
       Select an item
@@ -174,6 +191,32 @@ function resetInspector() {
   `;
 
   itemInspector.classList.remove("is-open");
+}
+
+
+/* ================================
+   COMPARE INSPECTOR
+================================ */
+
+function showCompareInspector(item) {
+  compareInspector.innerHTML = buildInspectorHTML(item);
+
+  compareInspector.classList.remove("is-open");
+  void compareInspector.offsetWidth;
+  compareInspector.classList.add("is-open");
+}
+
+
+function resetCompareInspector() {
+  comparisonItem = null;
+
+  compareInspector.innerHTML = `
+    <div class="inspector-placeholder">
+      No comparison item selected
+    </div>
+  `;
+
+  compareInspector.classList.remove("is-open");
 }
 
 
@@ -207,10 +250,6 @@ function getFilteredItems() {
 
   return filteredItems;
 }
-
-
-
-
 
 
 /* ================================
@@ -305,6 +344,7 @@ function resetFilters() {
 
   applySort();
   resetInspector();
+  resetCompareInspector();
 }
 
 
@@ -348,6 +388,22 @@ sortDirectionSelect.addEventListener("change", function() {
 });
 
 
+compareButton.addEventListener("click", function() {
+  if (!selectedItem) {
+    compareInspector.innerHTML = `
+      <div class="inspector-placeholder">
+        Select an item first
+      </div>
+    `;
+
+    return;
+  }
+
+  comparisonItem = selectedItem;
+  showCompareInspector(comparisonItem);
+});
+
+
 resetFiltersButton.addEventListener("click", resetFilters);
 
 
@@ -359,3 +415,4 @@ updateSecondarySortOptions();
 
 applySort();
 resetInspector();
+resetCompareInspector();
