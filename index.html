@@ -70,13 +70,12 @@
     </section>
 
 
-    <!-- ================================
-         SORT PANEL
-    ================================= -->
+<!-- ================================
+     SORT PANEL
+================================ -->
 <section class="sort-panel">
 
   <div class="sort-top-row">
-
     <span class="sort-title">Sort</span>
 
     <button
@@ -85,38 +84,54 @@
       type="button">
       Reset
     </button>
-
   </div>
 
 
   <div class="sort-controls-row">
 
     <div class="sort-field">
-      <label for="sort-stat">Stat</label>
+      <label for="primary-sort-stat">Primary Stat</label>
 
-      <select id="sort-stat">
-  <option value="cost">Cost</option>
+      <select id="primary-sort-stat">
+        <option value="cost">Cost</option>
+        <option value="physicalAttack">Physical Attack</option>
+        <option value="spellAttack">Spell Attack</option>
+        <option value="attackSpeed">Attack Speed</option>
+        <option value="critChance">Crit Chance</option>
+        <option value="critDamage">Crit Damage</option>
+        <option value="maxHp">Max HP</option>
+        <option value="maxMana">Max Mana</option>
+        <option value="physicalDefense">Physical Defense</option>
+        <option value="spellDefense">Spell Defense</option>
+        <option value="movementSpeed">Movement Speed</option>
+        <option value="cdr">CDR</option>
+        <option value="physicalLifesteal">Physical Lifesteal</option>
+        <option value="spellLifesteal">Spell Lifesteal</option>
+        <option value="tenacity">Tenacity</option>
+      </select>
+    </div>
 
-  <option value="physicalAttack">Physical Attack</option>
-  <option value="spellAttack">Spell Attack</option>
-  <option value="attackSpeed">Attack Speed</option>
-  <option value="critChance">Crit Chance</option>
-  <option value="critDamage">Crit Damage</option>
 
-  <option value="maxHp">Max HP</option>
-  <option value="maxMana">Max Mana</option>
+    <div class="sort-field">
+      <label for="secondary-sort-stat">Secondary Stat</label>
 
-  <option value="physicalDefense">Physical Defense</option>
-  <option value="spellDefense">Spell Defense</option>
-
-  <option value="movementSpeed">Movement Speed</option>
-  <option value="cdr">CDR</option>
-
-  <option value="physicalLifesteal">Physical Lifesteal</option>
-  <option value="spellLifesteal">Spell Lifesteal</option>
-
-  <option value="tenacity">Tenacity</option>
-</select>
+      <select id="secondary-sort-stat">
+        <option value="">None</option>
+        <option value="physicalAttack">Physical Attack</option>
+        <option value="spellAttack">Spell Attack</option>
+        <option value="attackSpeed">Attack Speed</option>
+        <option value="critChance">Crit Chance</option>
+        <option value="critDamage">Crit Damage</option>
+        <option value="maxHp">Max HP</option>
+        <option value="maxMana">Max Mana</option>
+        <option value="physicalDefense">Physical Defense</option>
+        <option value="spellDefense">Spell Defense</option>
+        <option value="movementSpeed">Movement Speed</option>
+        <option value="cdr">CDR</option>
+        <option value="physicalLifesteal">Physical Lifesteal</option>
+        <option value="spellLifesteal">Spell Lifesteal</option>
+        <option value="tenacity">Tenacity</option>
+      </select>
     </div>
 
 
@@ -132,13 +147,6 @@
   </div>
 
 
-  <label class="sort-toggle" id="hide-zero-wrapper">
-  <input type="checkbox" id="hide-zero-stats">
-
-  <span id="filter-toggle-label">
-    Only show Physical Defense items
-  </span>
-</label>
 
 </section>
 

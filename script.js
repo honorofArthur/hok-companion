@@ -6,14 +6,36 @@ const categoryButtons = document.querySelectorAll(".category-button");
 const itemGrid = document.querySelector(".item-grid");
 const itemInspector = document.querySelector(".item-inspector");
 
-const sortStatSelect = document.getElementById("sort-stat");
+const primarySort = document.getElementById("primary-sort-stat");
+const secondarySort = document.getElementById("secondary-sort-stat");
 const sortDirectionSelect = document.getElementById("sort-direction");
-const hideZeroStatsCheckbox = document.getElementById("hide-zero-stats");
+
 const resetFiltersButton = document.getElementById("reset-filters-button");
-const filterToggleLabel = document.getElementById("filter-toggle-label");
-const hideZeroWrapper = document.querySelector(".sort-toggle");
 
 let currentCategory = "All";
+
+
+/* ================================
+   SORT OPTIONS
+================================ */
+
+const sortOptions = [
+  { value: "cost", label: "Cost" },
+  { value: "physicalAttack", label: "Physical Attack" },
+  { value: "spellAttack", label: "Spell Attack" },
+  { value: "attackSpeed", label: "Attack Speed" },
+  { value: "critChance", label: "Crit Chance" },
+  { value: "critDamage", label: "Crit Damage" },
+  { value: "maxHp", label: "Max HP" },
+  { value: "maxMana", label: "Max Mana" },
+  { value: "physicalDefense", label: "Physical Defense" },
+  { value: "spellDefense", label: "Spell Defense" },
+  { value: "movementSpeed", label: "Movement Speed" },
+  { value: "cdr", label: "CDR" },
+  { value: "physicalLifesteal", label: "Physical Lifesteal" },
+  { value: "spellLifesteal", label: "Spell Lifesteal" },
+  { value: "tenacity", label: "Tenacity" }
+];
 
 
 /* ================================
@@ -44,14 +66,14 @@ function displayItems(itemsToShow) {
       <p class="item-summary">${item.summary}</p>
 
       <div class="stat-chip-row">
-  ${(item.chips || []).slice(0, 4).map(function(chip) {
-    return `<span class="stat-chip">${chip}</span>`;
-  }).join("")}
+        ${(item.chips || []).slice(0, 4).map(function(chip) {
+          return `<span class="stat-chip">${chip}</span>`;
+        }).join("")}
 
-  ${(item.chips || []).length > 4
-    ? `<span class="stat-chip more-chip">+${item.chips.length - 4} more</span>`
-    : ""}
-</div>
+        ${(item.chips || []).length > 4
+          ? `<span class="stat-chip more-chip">+${item.chips.length - 4} more</span>`
+          : ""}
+      </div>
     `;
 
     itemCard.addEventListener("click", function() {
@@ -122,6 +144,7 @@ function showItemInspector(item) {
   itemInspector.classList.add("is-open");
 }
 
+
 function resetInspector() {
   itemInspector.innerHTML = `
     <div class="inspector-placeholder">
@@ -146,31 +169,54 @@ function getFilteredItems() {
     });
   }
 
-  if (hideZeroStatsCheckbox.checked) {
-    const selectedStat = sortStatSelect.value;
+  const primaryStat = primarySort.value;
+  const secondaryStat = secondarySort.value;
 
+  if (primaryStat !== "cost") {
     filteredItems = filteredItems.filter(function(item) {
-      return (item.sortStats[selectedStat] || 0) > 0;
+      return (item.sortStats[primaryStat] || 0) > 0;
+    });
+  }
+
+  if (secondaryStat) {
+    filteredItems = filteredItems.filter(function(item) {
+      return (item.sortStats[secondaryStat] || 0) > 0;
     });
   }
 
   return filteredItems;
 }
 
-function updateFilterLabel() {
-  const selectedOption =
-    sortStatSelect.options[sortStatSelect.selectedIndex].text;
 
-  filterToggleLabel.textContent =
-    `Only show ${selectedOption} items`;
-}
 
-function updateOnlyShowVisibility() {
-  if (sortStatSelect.value === "cost") {
-    hideZeroWrapper.style.display = "none";
-    hideZeroStatsCheckbox.checked = false;
+
+
+
+/* ================================
+   DUAL SORT DROPDOWN LOGIC
+================================ */
+
+function updateSecondarySortOptions() {
+  const primaryValue = primarySort.value;
+  const currentSecondaryValue = secondarySort.value;
+
+  secondarySort.innerHTML = `<option value="">None</option>`;
+
+  sortOptions.forEach(function(option) {
+    if (option.value !== primaryValue) {
+      const optionElement = document.createElement("option");
+
+      optionElement.value = option.value;
+      optionElement.textContent = option.label;
+
+      secondarySort.appendChild(optionElement);
+    }
+  });
+
+  if (currentSecondaryValue !== primaryValue) {
+    secondarySort.value = currentSecondaryValue;
   } else {
-    hideZeroWrapper.style.display = "flex";
+    secondarySort.value = "";
   }
 }
 
@@ -180,20 +226,35 @@ function updateOnlyShowVisibility() {
 ================================ */
 
 function applySort() {
-  const selectedStat = sortStatSelect.value;
+  const primaryStat = primarySort.value;
+  const secondaryStat = secondarySort.value;
   const selectedDirection = sortDirectionSelect.value;
 
   const filteredItems = getFilteredItems();
 
   filteredItems.sort(function(a, b) {
-    const valueA = a.sortStats[selectedStat] || 0;
-    const valueB = b.sortStats[selectedStat] || 0;
+    const primaryA = a.sortStats[primaryStat] || 0;
+    const primaryB = b.sortStats[primaryStat] || 0;
 
-    if (selectedDirection === "desc") {
-      return valueB - valueA;
+    const primaryDifference =
+      selectedDirection === "desc"
+        ? primaryB - primaryA
+        : primaryA - primaryB;
+
+    if (primaryDifference !== 0) {
+      return primaryDifference;
     }
 
-    return valueA - valueB;
+    if (secondaryStat) {
+      const secondaryA = a.sortStats[secondaryStat] || 0;
+      const secondaryB = b.sortStats[secondaryStat] || 0;
+
+      return selectedDirection === "desc"
+        ? secondaryB - secondaryA
+        : secondaryA - secondaryB;
+    }
+
+    return 0;
   });
 
   displayItems(filteredItems);
@@ -207,9 +268,9 @@ function applySort() {
 function resetFilters() {
   currentCategory = "All";
 
-  sortStatSelect.value = "cost";
+  primarySort.value = "cost";
+  secondarySort.value = "";
   sortDirectionSelect.value = "desc";
-  hideZeroStatsCheckbox.checked = false;
 
   categoryButtons.forEach(function(button) {
     button.classList.remove("active");
@@ -219,8 +280,8 @@ function resetFilters() {
     .querySelector('.category-button[data-category="All"]')
     .classList.add("active");
 
-  updateFilterLabel();
-  updateOnlyShowVisibility();
+  updateSecondarySortOptions();
+
   applySort();
   resetInspector();
 }
@@ -245,22 +306,26 @@ categoryButtons.forEach(function(button) {
   });
 });
 
-sortStatSelect.addEventListener("change", function() {
-  updateFilterLabel();
-  updateOnlyShowVisibility();
+
+primarySort.addEventListener("change", function() {
+  updateSecondarySortOptions();
+
   applySort();
   resetInspector();
 });
+
+
+secondarySort.addEventListener("change", function() {
+  applySort();
+  resetInspector();
+});
+
 
 sortDirectionSelect.addEventListener("change", function() {
   applySort();
   resetInspector();
 });
 
-hideZeroStatsCheckbox.addEventListener("change", function() {
-  applySort();
-  resetInspector();
-});
 
 resetFiltersButton.addEventListener("click", resetFilters);
 
@@ -269,7 +334,7 @@ resetFiltersButton.addEventListener("click", resetFilters);
    INITIAL PAGE LOAD
 ================================ */
 
-updateFilterLabel();
-updateOnlyShowVisibility();
+updateSecondarySortOptions();
+
 applySort();
 resetInspector();
