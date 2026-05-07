@@ -31,10 +31,10 @@ const items = [
   ],
 
   chips: [
-    "Physical Attack",
-    "Attack Speed",
-    "Crit Chance",
-    "Movement Speed"
+    TAGS.physicalAttack,
+    TAGS.attackSpeed,
+    TAGS.critChance,
+    TAGS.movementSpeed
   ],
 
   sortStats: {
@@ -84,11 +84,11 @@ const items = [
   ],
 
   chips: [
-    "Physical Attack",
-    "Cooldown Reduction",
-    "Physical Defense",
-    "Slow",
-    "Cleanse CC"
+    TAGS.physicalAttack,
+    TAGS.cooldown,
+    TAGS.physicalDefense,
+    TAGS.slow,
+    TAGS.cleanse
   ],
 
   sortStats: {
@@ -138,10 +138,10 @@ const items = [
   ],
 
   chips: [
-    "Physical Attack",
-    "Attack Speed",
-    "Crit Chance",
-    "Armor Penetration"
+    TAGS.physicalAttack,
+    TAGS.attackSpeed,
+    TAGS.critChance,
+    TAGS.physicalPenetration
   ],
 
   sortStats: {
@@ -190,9 +190,9 @@ const items = [
   ],
 
   chips: [
-    "Physical Attack",
-    "CDR",
-    "Bonus Damage Below 50% HP"
+    TAGS.physicalAttack,
+    TAGS.cooldown,
+    TAGS.bonusDamage
   ],
 
   sortStats: {
@@ -231,7 +231,7 @@ const items = [
   image: "images/moon-goddess.png",
   price: 3340,
 
-  summary: "High spell power and spell vamp. Active that grants temporarty invulnerability.",
+  summary: "High spell power and spell vamp. Active that grants temporary invulnerability.",
 
   description: "",
 
@@ -246,10 +246,11 @@ const items = [
   ],
 
   chips: [
-    "Spell Damage",
-    "CDR",
-    "Spell Vamp",
-    "Invulnerability",
+    TAGS.spellDamage,
+    TAGS.cooldown,
+    TAGS.spellVamp,
+    TAGS.active,
+    TAGS.invulnerability
   ],
   sortStats: {
   cost: 3340,
@@ -274,12 +275,11 @@ const items = [
 
   tenacity: 0
 }
-
+},
 
 /* ================================
    DEFENCE ITEMS
 ================================ */
-},
 
   {
   name: "Wrath of Souls",
@@ -302,9 +302,9 @@ const items = [
   ],
 
   chips: [
-    "Physical Attack",
-    "Max HP",
-    "Health-based Damage + Shield"
+    TAGS.physicalAttack,
+    TAGS.maxHp,
+    TAGS.healthBasedDamage
   ],
   
 sortStats: {
@@ -355,9 +355,9 @@ sortStats: {
     ],
 
     chips: [
-      "MS",
-      "Spell Penetration",
-      "Mana Regen"
+      TAGS.movementSpeed,
+      TAGS.spellPenetration,
+      TAGS.manaRegen
     ],
 
   sortStats: {
@@ -404,9 +404,9 @@ sortStats: {
     ],
 
     chips: [
-      "MS",
-      "Summoner Spell CDR",
-      "CDR"
+      TAGS.movementSpeed,
+      TAGS.summonerSpellCDR,
+      TAGS.cooldown
     ],
 
     sortStats: {
@@ -454,10 +454,10 @@ sortStats: {
     ],
 
     chips: [
-      "MS",
-      "Spell Defense",
-      "Physical Defense",
-      "Toughness"
+      TAGS.movementSpeed,
+      TAGS.spellDefense,
+      TAGS.physicalDefense,
+      TAGS.toughness
     ],
 
     sortStats: {
@@ -504,9 +504,9 @@ sortStats: {
     ],
 
     chips: [
-      "MS",
-      "Attack Speed",
-      "Health Recovery"
+      TAGS.movementSpeed,
+      TAGS.attackSpeed,
+      TAGS.healthRegen
     ],
 
     sortStats: {
@@ -553,9 +553,9 @@ sortStats: {
     ],
 
     chips: [
-      "MS",
-      "Max HP",
-      "Out of Combat MS"
+      TAGS.movementSpeed,
+      TAGS.maxHp,
+      TAGS.outOfCombatMS
     ],
 
     sortStats: {
@@ -603,10 +603,10 @@ sortStats: {
     ],
 
     chips: [
-      "MS",
-      "Physical Defense",
-      "Spell Defense",
-      "Reduce Physical Damage"
+      TAGS.movementSpeed,
+      TAGS.physicalDefense,
+      TAGS.spellDefense,
+      TAGS.physicalDamageReduction
     ],
 
     sortStats: {

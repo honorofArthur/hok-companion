@@ -66,15 +66,36 @@ function displayItems(itemsToShow) {
       <p class="item-summary">${item.summary}</p>
 
       <div class="stat-chip-row">
-        ${(item.chips || []).slice(0, 4).map(function(chip) {
-          return `<span class="stat-chip">${chip}</span>`;
-        }).join("")}
+  ${(item.chips || []).map(function(chip, index) {
+    const hiddenClass = index >= 4 ? "hidden-chip" : "";
 
-        ${(item.chips || []).length > 4
-          ? `<span class="stat-chip more-chip">+${item.chips.length - 4} more</span>`
-          : ""}
-      </div>
+    return `<span class="stat-chip ${hiddenClass}">${chip}</span>`;
+  }).join("")}
+
+  ${(item.chips || []).length > 4
+    ? `<button class="stat-chip more-chip" type="button">
+        +${item.chips.length - 4} more
+      </button>`
+    : ""}
+</div>
     `;
+
+const moreChipButton = itemCard.querySelector(".more-chip");
+const hiddenChips = itemCard.querySelectorAll(".hidden-chip");
+
+if (moreChipButton) {
+  moreChipButton.addEventListener("click", function(event) {
+    event.stopPropagation();
+
+    itemCard.classList.toggle("show-all-chips");
+
+    if (itemCard.classList.contains("show-all-chips")) {
+      moreChipButton.textContent = "Show less";
+    } else {
+      moreChipButton.textContent = `+${hiddenChips.length} more`;
+    }
+  });
+}
 
     itemCard.addEventListener("click", function() {
       showItemInspector(item);
