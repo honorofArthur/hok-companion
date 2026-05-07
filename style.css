@@ -21,6 +21,11 @@ body {
     #071226;
 }
 
+@media (max-width: 900px) {
+  body {
+    padding: 24px 18px;
+  }
+
 .site-header,
 .page {
   width: 100%;
@@ -30,6 +35,22 @@ body {
   margin-right: auto;
 
   zoom: 1.15;
+}
+
+.page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #item-inspector {
+    position: static;
+    width: 100%;
+    max-width: none;
+  }
+
+  .sort-panel {
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }
 
 
