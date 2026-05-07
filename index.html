@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Page setup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title -->
+  <title>Honor of Kings Items</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================================
+       HEADER
+  ================================= -->
+
+  <header class="site-header">
+    <h1>Honor of Kings Items</h1>
+  </header>
+
+
+  <!-- ================================
+       MAIN PAGE CONTENT
+  ================================= -->
+
+  <main class="page">
+
+
+    <!-- ================================
+         CATEGORY FILTERS
+    ================================= -->
+
+    <section class="controls">
+      <div class="category-row">
+
+        <button class="category-button all active" data-category="All">
+          <span>All Items</span>
+        </button>
+
+        <button class="category-button physical" data-category="Physical Attack">
+          <span>Physical Attack Items</span>
+        </button>
+
+        <button class="category-button spell" data-category="Spell Attack">
+          <span>Spell Attack Items</span>
+        </button>
+
+        <button class="category-button defence" data-category="Defence">
+          <span>Defence Items</span>
+        </button>
+
+        <button class="category-button jungling" data-category="Jungling">
+          <span>Jungling Items</span>
+        </button>
+
+        <button class="category-button roaming" data-category="Roaming">
+          <span>Roaming Items</span>
+        </button>
+
+        <button class="category-button movement" data-category="Movement">
+          <span>Movement Items</span>
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- ================================
+         SORT PANEL
+    ================================= -->
+<section class="sort-panel">
+
+  <div class="sort-top-row">
+
+    <span class="sort-title">Sort</span>
+
+    <button
+      class="reset-filters-button"
+      id="reset-filters-button"
+      type="button">
+      Reset
+    </button>
+
+  </div>
+
+
+  <div class="sort-controls-row">
+
+    <div class="sort-field">
+      <label for="sort-stat">Stat</label>
+
+      <select id="sort-stat">
+        <option value="cost">Cost</option>
+        <option value="maxHp">Max HP</option>
+        <option value="physicalDefense">Physical Defense</option>
+        <option value="spellDefense">Spell Defense</option>
+        <option value="physicalAttack">Physical Attack</option>
+        <option value="spellAttack">Spell Attack</option>
+        <option value="cdr">CDR</option>
+        <option value="attackSpeed">Attack Speed</option>
+        <option value="critChance">Crit Chance</option>
+        <option value="movementSpeed">Movement Speed</option>
+      </select>
+    </div>
+
+
+    <div class="sort-field">
+      <label for="sort-direction">Order</label>
+
+      <select id="sort-direction">
+        <option value="desc">High → Low</option>
+        <option value="asc">Low → High</option>
+      </select>
+    </div>
+
+  </div>
+
+
+  <label class="sort-toggle">
+    <input type="checkbox" id="hide-zero-stats">
+
+    <span id="filter-toggle-label">
+      Only show Physical Defense items
+    </span>
+  </label>
+
+</section>
+
+  <!-- ================================
+     ITEM DATABASE LAYOUT
+================================= -->
+
+<div class="database-layout">
+
+  <section id="item-list" class="item-grid">
+  <!-- JavaScript will place item cards here -->
+</section>
+
+  <aside class="item-inspector">
+    <div class="inspector-placeholder">
+      Select an item
+    </div>
+  </aside>
+
+</div>
+
+</main>
+
+
+
+  <!-- ================================
+       JAVASCRIPT
+  ================================= -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
