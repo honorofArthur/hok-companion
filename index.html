@@ -95,17 +95,28 @@
       <label for="sort-stat">Stat</label>
 
       <select id="sort-stat">
-        <option value="cost">Cost</option>
-        <option value="maxHp">Max HP</option>
-        <option value="physicalDefense">Physical Defense</option>
-        <option value="spellDefense">Spell Defense</option>
-        <option value="physicalAttack">Physical Attack</option>
-        <option value="spellAttack">Spell Attack</option>
-        <option value="cdr">CDR</option>
-        <option value="attackSpeed">Attack Speed</option>
-        <option value="critChance">Crit Chance</option>
-        <option value="movementSpeed">Movement Speed</option>
-      </select>
+  <option value="cost">Cost</option>
+
+  <option value="physicalAttack">Physical Attack</option>
+  <option value="spellAttack">Spell Attack</option>
+  <option value="attackSpeed">Attack Speed</option>
+  <option value="critChance">Crit Chance</option>
+  <option value="critDamage">Crit Damage</option>
+
+  <option value="maxHp">Max HP</option>
+  <option value="maxMana">Max Mana</option>
+
+  <option value="physicalDefense">Physical Defense</option>
+  <option value="spellDefense">Spell Defense</option>
+
+  <option value="movementSpeed">Movement Speed</option>
+  <option value="cdr">CDR</option>
+
+  <option value="physicalLifesteal">Physical Lifesteal</option>
+  <option value="spellLifesteal">Spell Lifesteal</option>
+
+  <option value="tenacity">Tenacity</option>
+</select>
     </div>
 
 
@@ -121,13 +132,13 @@
   </div>
 
 
-  <label class="sort-toggle">
-    <input type="checkbox" id="hide-zero-stats">
+  <label class="sort-toggle" id="hide-zero-wrapper">
+  <input type="checkbox" id="hide-zero-stats">
 
-    <span id="filter-toggle-label">
-      Only show Physical Defense items
-    </span>
-  </label>
+  <span id="filter-toggle-label">
+    Only show Physical Defense items
+  </span>
+</label>
 
 </section>
 

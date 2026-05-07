@@ -664,9 +664,12 @@ h1 {
 .stat-chip-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
 
-  margin-top: 18px;
+  margin-top: 10px;
+
+  max-height: 58px;
+  overflow: hidden;
 }
 
 .stat-chip {
@@ -681,6 +684,11 @@ h1 {
   border: 1px solid rgba(148, 163, 184, 0.20);
 
   background: rgba(15, 23, 42, 0.50);
+}
+
+.more-chip {
+  opacity: 0.75;
+  border-style: dashed;
 }
 
 .item-card.movement .stat-chip {

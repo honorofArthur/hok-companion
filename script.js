@@ -11,6 +11,7 @@ const sortDirectionSelect = document.getElementById("sort-direction");
 const hideZeroStatsCheckbox = document.getElementById("hide-zero-stats");
 const resetFiltersButton = document.getElementById("reset-filters-button");
 const filterToggleLabel = document.getElementById("filter-toggle-label");
+const hideZeroWrapper = document.querySelector(".sort-toggle");
 
 let currentCategory = "All";
 
@@ -43,10 +44,14 @@ function displayItems(itemsToShow) {
       <p class="item-summary">${item.summary}</p>
 
       <div class="stat-chip-row">
-        ${item.chips.map(function(chip) {
-          return `<span class="stat-chip">${chip}</span>`;
-        }).join("")}
-      </div>
+  ${(item.chips || []).slice(0, 4).map(function(chip) {
+    return `<span class="stat-chip">${chip}</span>`;
+  }).join("")}
+
+  ${(item.chips || []).length > 4
+    ? `<span class="stat-chip more-chip">+${item.chips.length - 4} more</span>`
+    : ""}
+</div>
     `;
 
     itemCard.addEventListener("click", function() {
@@ -73,12 +78,12 @@ function showItemInspector(item) {
 
       <div>
         <h2>${item.name}</h2>
-        <p class="inspector-chinese">${item.chineseName}</p>
+        <p class="inspector-chinese">${item.chineseName || ""}</p>
         <p class="inspector-price">${item.price} gold</p>
       </div>
     </div>
 
-    <p class="inspector-summary">${item.description}</p>
+    <p class="inspector-summary">${item.description || item.summary || ""}</p>
 
     <h3>Stats</h3>
 
@@ -129,27 +134,7 @@ function resetInspector() {
 
 
 /* ================================
-   CATEGORY FILTERING
-================================ */
-
-categoryButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    currentCategory = button.dataset.category;
-
-    categoryButtons.forEach(function(btn) {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    applySort();
-    resetInspector();
-  });
-});
-
-
-/* ================================
-   SORTING
+   FILTERING
 ================================ */
 
 function getFilteredItems() {
@@ -165,7 +150,7 @@ function getFilteredItems() {
     const selectedStat = sortStatSelect.value;
 
     filteredItems = filteredItems.filter(function(item) {
-      return item.sortStats[selectedStat] > 0;
+      return (item.sortStats[selectedStat] || 0) > 0;
     });
   }
 
@@ -180,6 +165,20 @@ function updateFilterLabel() {
     `Only show ${selectedOption} items`;
 }
 
+function updateOnlyShowVisibility() {
+  if (sortStatSelect.value === "cost") {
+    hideZeroWrapper.style.display = "none";
+    hideZeroStatsCheckbox.checked = false;
+  } else {
+    hideZeroWrapper.style.display = "flex";
+  }
+}
+
+
+/* ================================
+   SORTING
+================================ */
+
 function applySort() {
   const selectedStat = sortStatSelect.value;
   const selectedDirection = sortDirectionSelect.value;
@@ -187,8 +186,8 @@ function applySort() {
   const filteredItems = getFilteredItems();
 
   filteredItems.sort(function(a, b) {
-    const valueA = a.sortStats[selectedStat];
-    const valueB = b.sortStats[selectedStat];
+    const valueA = a.sortStats[selectedStat] || 0;
+    const valueB = b.sortStats[selectedStat] || 0;
 
     if (selectedDirection === "desc") {
       return valueB - valueA;
@@ -199,6 +198,11 @@ function applySort() {
 
   displayItems(filteredItems);
 }
+
+
+/* ================================
+   RESET
+================================ */
 
 function resetFilters() {
   currentCategory = "All";
@@ -216,6 +220,7 @@ function resetFilters() {
     .classList.add("active");
 
   updateFilterLabel();
+  updateOnlyShowVisibility();
   applySort();
   resetInspector();
 }
@@ -225,8 +230,24 @@ function resetFilters() {
    EVENT LISTENERS
 ================================ */
 
+categoryButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    currentCategory = button.dataset.category;
+
+    categoryButtons.forEach(function(btn) {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    applySort();
+    resetInspector();
+  });
+});
+
 sortStatSelect.addEventListener("change", function() {
   updateFilterLabel();
+  updateOnlyShowVisibility();
   applySort();
   resetInspector();
 });
@@ -249,5 +270,6 @@ resetFiltersButton.addEventListener("click", resetFilters);
 ================================ */
 
 updateFilterLabel();
-displayItems(items);
+updateOnlyShowVisibility();
+applySort();
 resetInspector();

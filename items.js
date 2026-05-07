@@ -1,8 +1,13 @@
+const items = [
 /* ================================
    ITEM DATA
 ================================ */
 
-const items = [
+
+/* ================================
+   PHYSICAL ATTACK ITEMS
+================================ */
+
 {
   name: "Swift Sun Abyss",
   chineseName: "",
@@ -33,17 +38,28 @@ const items = [
   ],
 
   sortStats: {
-    cost: 3320,
-    maxHp: 0,
-    physicalDefense: 0,
-    spellDefense: 0,
-    physicalAttack: 40,
-    spellAttack: 0,
-    attackSpeed: 20,
-    critChance: 15,
-    movementSpeed: 7.5,
-    cdr: 0
-  }
+  cost: 3320,
+
+  physicalAttack: 40,
+  spellAttack: 0,
+  attackSpeed: 20,
+  critChance: 15,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
+  movementSpeed: 7.5,
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
 },
 
 {
@@ -76,17 +92,28 @@ const items = [
   ],
 
   sortStats: {
-    cost: 3280,
-    maxHp: 0,
-    physicalDefense: 150,
-    spellDefense: 0,
-    physicalAttack: 150,
-    spellAttack: 0,
-    attackSpeed: 0,
-    critChance: 0,
-    movementSpeed: 0,
-    cdr: 10
-  }
+  cost: 3280,
+
+  physicalAttack: 80,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 150,
+  spellDefense: 0,
+
+  movementSpeed: 0,
+  cdr: 10,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
 },
 
 {
@@ -118,17 +145,28 @@ const items = [
   ],
 
   sortStats: {
-    cost: 2570,
-    maxHp: 0,
-    physicalDefense: 0,
-    spellDefense: 0,
-    physicalAttack: 75,
-    spellAttack: 0,
-    attackSpeed: 0,
-    critChance: 15,
-    movementSpeed: 0,
-    cdr: 0
-  }
+  cost: 2570,
+
+  physicalAttack: 75,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 15,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
+  movementSpeed: 0,
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
 },
 
 {
@@ -158,18 +196,33 @@ const items = [
   ],
 
   sortStats: {
-    cost: 2540,
-    maxHp: 0,
-    physicalDefense: 0,
-    spellDefense: 0,
-    physicalAttack: 150,
-    spellAttack: 0,
-    attackSpeed: 0,
-    critChance: 0,
-    movementSpeed: 0,
-    cdr: 5
-  }
+  cost: 2540,
+
+  physicalAttack: 150,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
+  movementSpeed: 0,
+  cdr: 5,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
 },
+
+/* ================================
+   SPELL ATTACK ITEMS
+================================ */
 
 {
   name: "Moon Goddess",
@@ -196,21 +249,36 @@ const items = [
     "Spell Damage",
     "CDR",
     "Spell Vamp",
-    "Invulnerability"
+    "Invulnerability",
   ],
   sortStats: {
   cost: 3340,
-  maxHp: 0,
-  physicalDefense: 0,
-  spellDefense: 0,
+
   physicalAttack: 0,
   spellAttack: 160,
   attackSpeed: 0,
   critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
   movementSpeed: 0,
-  cdr: 7.5
+  cdr: 7.5,
+
+  physicalLifesteal: 0,
+  spellVamp: 12,
+
+  tenacity: 0
 }
 
+
+/* ================================
+   DEFENCE ITEMS
+================================ */
 },
 
   {
@@ -241,17 +309,32 @@ const items = [
   
 sortStats: {
   cost: 3300,
-  maxHp: 900,
-  physicalDefense: 0,
-  spellDefense: 0,
+
   physicalAttack: 75,
   spellAttack: 0,
   attackSpeed: 0,
-  critChance: 0,
+  critChance:0,
+  critDamage: 0,
+
+  maxHp: 900,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
   movementSpeed: 0,
-  cdr: 0
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
 }
 
+
+/* ================================
+   MOVEMENT ITEMS
+================================ */
 },
   {
     name: "Arcane Boots",
@@ -277,16 +360,29 @@ sortStats: {
       "Mana Regen"
     ],
 
-    sortStats: {
-      cost: 700,
-      maxHp: 0,
-      physicalDefense: 0,
-      spellDefense: 0,
-      physicalAttack: 0,
-      spellAttack: 0,
-      attackSpeed: 0,
-      cdr: 0
-    }
+  sortStats: {
+  cost: 700,
+
+  physicalAttack: 0,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
+  movementSpeed: 50,
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
   },
 
   {
@@ -303,7 +399,7 @@ sortStats: {
 
     stats: [
       "+50 Movement Speed",
-      "+Summoner CD −10–20%",
+      "+Summoner CD -10-20%",
       "+15% CDR"
     ],
 
@@ -314,15 +410,28 @@ sortStats: {
     ],
 
     sortStats: {
-      cost: 700,
-      maxHp: 0,
-      physicalDefense: 0,
-      spellDefense: 0,
-      physicalAttack: 0,
-      spellAttack: 0,
-      attackSpeed: 0,
-      cdr: 15
-    }
+  cost: 700,
+
+  physicalAttack: 0,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
+  movementSpeed: 50,
+  cdr: 15,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
   },
 
   {
@@ -352,15 +461,28 @@ sortStats: {
     ],
 
     sortStats: {
-      cost: 700,
-      maxHp: 0,
-      physicalDefense: 50,
-      spellDefense: 100,
-      physicalAttack: 0,
-      spellAttack: 0,
-      attackSpeed: 0,
-      cdr: 0
-    }
+  cost: 700,
+
+  physicalAttack: 0,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 50,
+  spellDefense: 100,
+
+  movementSpeed: 50,
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 25
+}
   },
 
   {
@@ -388,15 +510,28 @@ sortStats: {
     ],
 
     sortStats: {
-      cost: 700,
-      maxHp: 0,
-      physicalDefense: 0,
-      spellDefense: 0,
-      physicalAttack: 0,
-      spellAttack: 0,
-      attackSpeed: 20,
-      cdr: 0
-    }
+  cost: 700,
+
+  physicalAttack: 0,
+  spellAttack: 0,
+  attackSpeed: 20,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
+  movementSpeed: 50,
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
   },
 
   {
@@ -424,15 +559,28 @@ sortStats: {
     ],
 
     sortStats: {
-      cost: 700,
-      maxHp: 300,
-      physicalDefense: 0,
-      spellDefense: 0,
-      physicalAttack: 0,
-      spellAttack: 0,
-      attackSpeed: 0,
-      cdr: 0
-    }
+  cost: 700,
+
+  physicalAttack: 0,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 300,
+  maxMana: 0,
+
+  physicalDefense: 0,
+  spellDefense: 0,
+
+  movementSpeed: 50,
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
   },
 
   {
@@ -462,14 +610,27 @@ sortStats: {
     ],
 
     sortStats: {
-      cost: 700,
-      maxHp: 0,
-      physicalDefense: 100,
-      spellDefense: 50,
-      physicalAttack: 0,
-      spellAttack: 0,
-      attackSpeed: 0,
-      cdr: 0
-    }
+  cost: 700,
+
+  physicalAttack: 0,
+  spellAttack: 0,
+  attackSpeed: 0,
+  critChance: 0,
+  critDamage: 0,
+
+  maxHp: 0,
+  maxMana: 0,
+
+  physicalDefense: 100,
+  spellDefense: 50,
+
+  movementSpeed: 50,
+  cdr: 0,
+
+  physicalLifesteal: 0,
+  spellVamp: 0,
+
+  tenacity: 0
+}
   }
 ];
