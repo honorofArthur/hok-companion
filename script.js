@@ -21,6 +21,55 @@ let comparisonItem = null;
 
 
 /* ================================
+   MOBILE INSPECTOR BACKDROP
+================================ */
+
+const mobileInspectorBackdrop = document.createElement("div");
+mobileInspectorBackdrop.className = "mobile-inspector-backdrop";
+document.body.appendChild(mobileInspectorBackdrop);
+
+/* ================================
+   MOBILE ITEM MODAL
+================================ */
+
+const mobileItemBackdrop = document.createElement("div");
+mobileItemBackdrop.className = "mobile-item-backdrop";
+
+const mobileItemModal = document.createElement("div");
+mobileItemModal.className = "mobile-item-modal";
+
+document.body.appendChild(mobileItemBackdrop);
+document.body.appendChild(mobileItemModal);
+
+function isMobileScreen() {
+  return window.innerWidth <= 700;
+}
+
+function openMobileItemModal(item) {
+  if (!isMobileScreen()) return;
+
+  mobileItemModal.innerHTML = `
+    <button class="mobile-close-inspector" type="button" onclick="closeMobileItemModal()">
+      Close
+    </button>
+
+    ${buildInspectorHTML(item)}
+  `;
+
+  mobileItemBackdrop.classList.add("active");
+  mobileItemModal.classList.add("active");
+  document.body.classList.add("modal-open");
+}
+
+function closeMobileItemModal() {
+  mobileItemBackdrop.classList.remove("active");
+  mobileItemModal.classList.remove("active");
+  document.body.classList.remove("modal-open");
+}
+
+mobileItemBackdrop.addEventListener("click", closeMobileItemModal);
+
+/* ================================
    SORT OPTIONS
 ================================ */
 
@@ -38,9 +87,40 @@ const sortOptions = [
   { value: "movementSpeed", label: "Movement Speed" },
   { value: "cdr", label: "CDR" },
   { value: "physicalLifesteal", label: "Physical Lifesteal" },
-  { value: "spellLifesteal", label: "Spell Lifesteal" },
+  { value: "spellVamp", label: "Spell Vamp" },
   { value: "tenacity", label: "Tenacity" }
 ];
+
+
+/* ================================
+   MOBILE INSPECTOR
+================================ */
+
+function isMobileScreen() {
+  return window.innerWidth <= 700;
+}
+
+function openMobileInspector() {
+  if (!isMobileScreen()) return;
+
+  itemInspector.classList.add("mobile-open");
+  mobileInspectorBackdrop.classList.add("active");
+  document.body.classList.add("modal-open");
+}
+
+function closeMobileInspector() {
+  itemInspector.classList.remove("mobile-open");
+  mobileInspectorBackdrop.classList.remove("active");
+  document.body.classList.remove("modal-open");
+}
+
+mobileInspectorBackdrop.addEventListener("click", closeMobileInspector);
+
+window.addEventListener("resize", function() {
+  if (!isMobileScreen()) {
+    closeMobileInspector();
+  }
+});
 
 
 /* ================================
@@ -73,7 +153,6 @@ function displayItems(itemsToShow) {
       <div class="stat-chip-row">
         ${(item.chips || []).map(function(chip, index) {
           const hiddenClass = index >= 4 ? "hidden-chip" : "";
-
           return `<span class="stat-chip ${hiddenClass}">${chip}</span>`;
         }).join("")}
 
@@ -94,17 +173,20 @@ function displayItems(itemsToShow) {
 
         itemCard.classList.toggle("show-all-chips");
 
-        if (itemCard.classList.contains("show-all-chips")) {
-          moreChipButton.textContent = "Show less";
-        } else {
-          moreChipButton.textContent = `+${hiddenChips.length} more`;
-        }
+        moreChipButton.textContent = itemCard.classList.contains("show-all-chips")
+          ? "Show less"
+          : `+${hiddenChips.length} more`;
       });
     }
 
     itemCard.addEventListener("click", function() {
       selectedItem = item;
-      showItemInspector(item);
+
+      if (isMobileScreen()) {
+        openMobileItemModal(item);
+      } else {
+        showItemInspector(item);
+      }
     });
 
     itemGrid.appendChild(itemCard);
@@ -116,12 +198,16 @@ function displayItems(itemsToShow) {
    INSPECTOR TEMPLATE
 ================================ */
 
-function buildInspectorHTML(item) {
+function buildInspectorHTML(item, showCloseButton = false) {
   const passiveText = item.passive || "";
   const passiveText2 = item.passive2 || "";
   const activeText = item.active || "";
 
   return `
+    ${showCloseButton
+      ? `<button class="mobile-close-inspector" type="button" onclick="closeMobileInspector()">Close</button>`
+      : ""}
+
     <div class="inspector-header">
       <img class="inspector-icon" src="${item.image}" alt="${item.name} icon">
 
@@ -173,16 +259,16 @@ function buildInspectorHTML(item) {
 ================================ */
 
 function showItemInspector(item) {
-  itemInspector.innerHTML = buildInspectorHTML(item);
+  itemInspector.innerHTML = buildInspectorHTML(item, isMobileScreen());
 
   itemInspector.classList.remove("is-open");
   void itemInspector.offsetWidth;
   itemInspector.classList.add("is-open");
 }
 
-
 function resetInspector() {
   selectedItem = null;
+  closeMobileInspector();
 
   itemInspector.innerHTML = `
     <div class="inspector-placeholder">
@@ -199,13 +285,12 @@ function resetInspector() {
 ================================ */
 
 function showCompareInspector(item) {
-  compareInspector.innerHTML = buildInspectorHTML(item);
+  compareInspector.innerHTML = buildInspectorHTML(item, false);
 
   compareInspector.classList.remove("is-open");
   void compareInspector.offsetWidth;
   compareInspector.classList.add("is-open");
 }
-
 
 function resetCompareInspector() {
   comparisonItem = null;
@@ -273,11 +358,10 @@ function updateSecondarySortOptions() {
     }
   });
 
-  if (currentSecondaryValue !== primaryValue) {
-    secondarySort.value = currentSecondaryValue;
-  } else {
-    secondarySort.value = "";
-  }
+  secondarySort.value =
+    currentSecondaryValue !== primaryValue
+      ? currentSecondaryValue
+      : "";
 }
 
 
@@ -367,26 +451,21 @@ categoryButtons.forEach(function(button) {
   });
 });
 
-
 primarySort.addEventListener("change", function() {
   updateSecondarySortOptions();
-
   applySort();
   resetInspector();
 });
-
 
 secondarySort.addEventListener("change", function() {
   applySort();
   resetInspector();
 });
 
-
 sortDirectionSelect.addEventListener("change", function() {
   applySort();
   resetInspector();
 });
-
 
 compareButton.addEventListener("click", function() {
   if (!selectedItem) {
@@ -402,7 +481,6 @@ compareButton.addEventListener("click", function() {
   comparisonItem = selectedItem;
   showCompareInspector(comparisonItem);
 });
-
 
 resetFiltersButton.addEventListener("click", resetFilters);
 
