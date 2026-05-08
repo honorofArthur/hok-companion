@@ -220,6 +220,863 @@ const items = [
 }
 },
 
+{
+  name: "Pure Sky",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/pure-sky.png",
+  price: 2140,
+
+  summary: "Defensive item. Slows the first enemy hit by a skill and reduces their damage. Active grants temporary damage reduction.",
+
+  description: "Provides physical attack, physical defense, and cooldown reduction. The passive causes your skill to slow the first enemy hero hit and reduce their damage for 3 seconds, making it useful for duels and catching targets. The active grants 30% damage reduction for 3 seconds, giving strong short-term survivability during trades or teamfights.",
+
+  passive: "Cripple: The skill slows the first enemy hero hit by 10%~20% and reduces their damage taken by 20% for 3 seconds. Cooldown: 8 seconds.",
+  passive2: "",
+  active: "Dispel: Gain 30% damage reduction for 3 seconds. Cooldown: 75 seconds.",
+
+  stats: [
+    "+80 Physical Attack",
+    "+150 Physical Defense",
+    "+10% Cooldown Reduction" 
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.physicalDefense,
+    TAGS.cooldown,
+    TAGS.active,
+    TAGS.damageReduction
+  ],
+
+  sortStats: {
+    cost: 2140,
+
+    physicalAttack: 80,
+    spellAttack: 0,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 150,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 10,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Endless Blade",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/endless-blade.png",
+  price: 2110,
+
+  summary: "High-damage crit item. Passive that increases crit damage based on your total crit chance.",
+
+  description: "Provides high physical attack and critical hit chance. The passive increases critical damage based on your total critical hit chance, scaling up to a maximum bonus of 50%. Strong for heroes who build multiple crit items and rely on basic attack burst.",
+
+  passive: "Endless: Gain 20% critical strike chance, increasing by 1% for every 2% critical strike chance, up to a maximum of 50%.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+120 Physical Attack",
+    "+20% Critical Hit Chance"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.critChance,
+  ],
+
+  sortStats: {
+    cost: 2140,
+
+    physicalAttack: 120,
+    spellAttack: 0,
+    attackSpeed: 0,
+    critChance: 20,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Sunbow",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/sunbow.png",
+  price: 2100,
+
+  summary: "Crit and attack speed item with bonus movement speed. Active increases attack range and mobility for ranged heroes.",
+
+  description: "Provides physical attack, attack speed, crit chance, and bonus movement speed to improve sustained DPS and kiting. The active temporarily increases basic attack range and movement speed for ranged heroes, making it strong for chasing, repositioning, and safer teamfight damage output.",
+
+  passive: "Precision: Basic attack damage increased by 25 points; effect doubled for ranged heroes.",
+  passive2: "",
+  active: "Increases your basic attack range by 125 and movement speed by 20% for 5 seconds. Cooldown: 75 seconds (The increased range effect only applies to ranged heroes).",
+
+  stats: [
+    "+120 Physical Attack",
+    "+20% Attack Speed",
+    "+20% Critical Hit Chance"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.attackSpeed,
+    TAGS.critChance,
+  ],
+
+  sortStats: {
+    cost: 2140,
+
+    physicalAttack: 120,
+    spellAttack: 0,
+    attackSpeed: 0,
+    critChance: 20,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Apocalypse",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/apocalypse.png",
+  price: 2100,
+
+  summary: "Lifesteal bruiser item that converts excess healing into bonus health.",
+
+  description: "Grants physical attack, physical lifesteal, and bonus health for strong sustain and survivability. It increases physical skill lifesteal and turns overflow healing into additional maximum health, making it especially effective on heroes with frequent self-healing abilities",
+
+  passive: "Ruined King: Basic attacks deal an additional 80~160 (+7% of target's bonus maximum health) physical damage to the target.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+40 Physical Attack",
+    "+20% Attack Speed",
+    "+20% Physical Lifesteal",
+    "+500 maximum health"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.attackSpeed,
+    TAGS.physicalLifesteal,
+    TAGS.maxHp
+  ],
+
+  sortStats: {
+    cost: 2140,
+
+    physicalAttack: 40,
+    spellAttack: 0,
+    attackSpeed: 20,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 20,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Grandmaster's Power",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/grandmasters-power.png",
+  price: 2100,
+
+  summary: "Crit bruiser item with bonus health and enhanced attacks after using skills.",
+
+  description: "Provides physical attack, crit chance, attack speed, and bonus health for a balanced mix of damage and survivability. After using a skill, it grants bonus movement speed and empowers the next basic attack to deal extra physical damage based on physical attack, making it strong for weaving abilities between attacks and sticking to targets.",
+
+  passive: "Power Strike: After using the skill, movement speed is increased by 12% for 2 seconds, and the next basic attack within 5 seconds deals additional physical damage equal to 80% of physical attack. Cooldown: 3 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+55 Physical Attack",
+    "+20% Critical Strike Chance",
+    "+15% Attack Speed",
+    "+600 maximum health"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.critChance,
+    TAGS.attackSpeed,
+    TAGS.maxHp
+  ],
+
+  sortStats: {
+    cost: 2100,
+
+    physicalAttack: 55,
+    spellAttack: 0,
+    attackSpeed: 15,
+    critChance: 20 ,
+    critDamage: 0,
+
+    maxHp: 600,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Shadow Axe",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/shadow-axe.png",
+  price: 2090,
+
+  summary: "Physical attack item with cooldown reduction, health, and scaling armor penetration.",
+
+  description: "Grants high physical attack, cooldown reduction, and bonus health for stronger damage output with added survivability. Its passive provides scaling physical penetration, making it especially effective against armored targets and stronger as the game progresses.",
+
+  passive: "Cleave: Increases physical penetration by 90~180.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+80 Physical Attack",
+    "+10% Cooldown Reduction",
+    "+500 Max Health"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.cdr,
+    TAGS.maxHp,
+    TAGS.physicalPenetration
+  ],
+
+  sortStats: {
+    cost: 2090,
+
+    physicalAttack: 80,
+    spellAttack: 0,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 10,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Chasing the Wind",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/chasing-the-wind.png",
+  price: 2080,
+
+  summary: "Physical attack item that gains stacking speed and damage in combat.",
+
+  description: "",
+
+  passive: "Wind Chaser: Basic attacks and skill hits increase attack speed, movement speed, and damage by 2% for 2.5 seconds, stacking up to 5 times.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+600 maximum health",
+    "+50 Physical Attack",
+    "+30% Attack Speed"
+  ],
+
+  chips: [
+    TAGS.maxHp,
+    TAGS.physicalAttack,
+    TAGS.attackSpeed,
+    TAGS.movementSpeed
+  ],
+
+  sortStats: {
+    cost: 2080,
+
+    physicalAttack: 50,
+    spellAttack: 0,
+    attackSpeed: 30,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 600,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Star Shattering Hammer",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/star-shattering-hammer.png",
+  price: 2080,
+
+  summary: "High-damage bruiser item with bonus health, mobility, and percentage armor penetration.",
+
+  description: "Grants high physical attack, bonus max health, and movement speed for strong offensive pressure with added survivability. Its passive increases percentage physical penetration, allowing attacks to deal significantly more damage against heavily armored enemies.",
+
+  passive: "Armor Penetration: Increase physical penetration by 30%",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+90 Physical Attack",
+    "+700 Maximum Health",
+    "+7.5% Movement Speed"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.maxHp,
+    TAGS.movementSpeed,
+    TAGS.physicalPenetration
+  ],
+
+  sortStats: {
+    cost: 2080,
+
+    physicalAttack: 90,
+    spellAttack: 0,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 700,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Blade of Sanctions",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/blade-of-sanctions.png",
+  price: 2080,
+
+  summary: "Sustain-focused attack item with lifesteal, healing reduction, and emergency recovery.",
+
+  description: "Provides high physical attack, attack speed, and strong physical lifesteal for sustained fighting and survivability. Its passives grant emergency healing at low health and apply healing reduction to enemies hit by attacks or skills, making it effective in extended fights against sustain-heavy heroes.",
+
+  passive: "Resurrection: When your health is below 30%, you will recover a total of 375-750 health points over 5 seconds. Cooldown: 20 seconds.",
+  passive2: "Grievous Wounds : After a basic attack/skill hits an enemy, reduce their health regeneration and lifesteal by 35% for 2.5 seconds.",
+  active: "",
+
+  stats: [
+    "+100 Physical Attack",
+    "+20% Physical Lifesteal",
+    "+20% Attack Speed"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,  
+    TAGS.physicalLifesteal,
+    TAGS.attackSpeed,
+    TAGS.healing,
+    TAGS.antiHeal
+  ],
+
+  sortStats: {
+    cost: 2080,
+
+    physicalAttack: 100,
+    spellAttack: 0,
+    attackSpeed: 20,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 20,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Famous Sword - Fate",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/famous-sword-fate.png",
+  price: 2060,
+
+  summary: "Bruiser item with attack speed, survivability, and a temporary death-prevention effect.",
+
+  description: "Provides physical attack, attack speed, and bonus health for balanced offense and durability. When taking fatal damage, it grants brief invulnerability and movement speed instead of dying instantly, allowing aggressive plays and clutch escapes, with the invulnerability duration and base stats increasing over time.",
+
+  passive: "Dark Curtain: When receiving fatal damage, you will not die instantly, but will gain brief invulnerability and a 15% increase in movement speed for 1 second. After purchase, every 90/180/270 seconds, you will gain an additional 0.2 seconds of invulnerability and a 5% boost to the base stats of the Famous Blade of Fate, up to 3 times. Cooldown: 120 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+500 Max Health",
+    "+15% Attack Speed",
+    "+75 Physical Attack"
+  ],
+
+  chips: [
+    TAGS.maxHp,
+    TAGS.attackSpeed,
+    TAGS.physicalAttack,
+    TAGS.invulnerability,
+  ],
+
+  sortStats: {
+    cost: 2060,
+
+    physicalAttack: 75,
+    spellAttack: 0,
+    attackSpeed: 15,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Demon Breaking Knife",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/demon-breaking-knife.png",
+  price: 2060,
+
+  summary: "Anti-mage bruiser item with high durability and scaling magic defense.",
+
+  description: "Provides physical attack, magic defense, and bonus health for strong survivability against magic damage while maintaining offensive pressure. Its passive converts a portion of physical damage into additional spell defense, allowing physical fighters to become increasingly resistant to mages during combat.",
+
+  passive: "Demon Slayer: Gain spell defense equal to 50% of physical damage, up to a maximum of 250 points.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+90 Physical Attack",
+    "+150 Magic Defense",
+    "+600 Maximum Health"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.spellDefense,
+    TAGS.maxHp
+  ],
+
+  sortStats: {
+    cost: 2060,
+
+    physicalAttack: 90,
+    spellAttack: 0,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 600,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 150,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Frost Attacks",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/frost-attacks.png",
+  price: 2040,
+
+  summary: "Tanky attack-speed item that slows enemies and deals bonus on-hit damage.",
+
+  description: "Provides max health, physical attack, and attack speed for durable sustained damage. Its passives apply stacking slows and periodic bonus physical damage on attacks or skills, making it effective for sticking to targets and chasing enemies during extended fights.",
+
+  passive: "Frost: Basic attacks and skills reduce movement speed by 5%~10% for 1.5 seconds, stacking up to 2 times.",
+  passive2: "Frostbite: Basic attacks and skills deal 135~270 (+45% bonus physical attack) physical damage to the target. Cooldown: 3 seconds.",
+  active: "",
+
+  stats: [
+    "+750 Max Health",
+    "+25% Attack Speed",
+    "+70 Physical Attack"
+  ],
+
+  chips: [
+    TAGS.maxHp, 
+    TAGS.attackSpeed,
+    TAGS.physicalAttack,
+    TAGS.slow,
+    TAGS.onHit
+  ],
+
+  sortStats: {
+    cost: 2040,
+
+    physicalAttack: 70,
+    spellAttack: 0,
+    attackSpeed: 25,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 750,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Shadow Blade",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/shadow-blade.png",
+  price: 2040,
+
+  summary: "Crit attack-speed item with stealth, healing, and mobility active.",
+
+  description: "Provides physical attack, attack speed, crit chance, and bonus health for balanced offense and survivability. Its active grants temporary stealth, healing, and increasing movement speed, making it useful for escaping danger, repositioning, or setting up surprise engages.",
+
+  passive: "",
+  passive2: "",
+  active: "Untraceable: Instantly enter stealth mode. While in stealth, recover 110~220 + 6% of the health lost in the first 3 seconds and gain 30% speed boost every 0.5 seconds for 2.5 seconds (half speed boost for melee attacks). Casting a skill or basic attack will immediately exit stealth mode. Cooldown: 75 seconds.",
+
+  stats: [
+    "+40 Physical Attack",
+    "+20% Attack Speed",
+    "+20% Critical Strike Chance",
+    "+650 maximum health"
+  ],
+
+  chips: [
+    TAGS.attackSpeed,
+    TAGS.critChance,
+    TAGS.physicalAttack,
+    TAGS.maxHp,
+    TAGS.healing,
+    TAGS.movementSpeed,
+    TAGS.stealth,
+    TAGS.defense
+  ],
+
+  sortStats: {
+    cost: 2040,
+
+    physicalAttack: 40,
+    spellAttack: 0,
+    attackSpeed: 20,
+    critChance: 20,
+    critDamage: 0,
+
+    maxHp: 650,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Phantom Blade",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/phantom-blade.png",
+  price: 2040,
+
+  summary: "High attack-speed crit item that grants stacking combat speed bonuses.",
+
+  description: "Provides physical attack, attack speed, crit chance, and movement speed for fast sustained damage and kiting. Its passive grants additional attack speed and movement speed after basic attacks, with critical hits greatly increasing the effect, making it especially strong for rapid-fire crit builds.",
+
+  passive: "Storm: After a basic attack hits, you gain 10% attack speed (doubled on a critical hit) and 5% movement speed for 3 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+45 Physical Attack",
+    "+35% Attack Speed",
+    "+20% Critical Strike Chance",
+    "+7.5% Movement Speed"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.attackSpeed,
+    TAGS.critChance,
+    TAGS.movementSpeed,
+    TAGS.onHit
+  ],
+
+  sortStats: {
+    cost: 2040,
+
+    physicalAttack: 45,
+    spellAttack: 0,
+    attackSpeed: 35,
+    critChance: 20,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Lightning Dagger",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/lightning-dagger.png",
+  price: 2040,
+
+  summary: "Attack-speed item with bonus magic damage and chain lightning effects.",
+
+  description: "Provides physical attack, attack speed, and movement speed for fast-paced sustained damage. Its passive adds bonus magic damage to basic attacks and periodically unleashes chain lightning, making it effective for wave clear and multi-target fights.",
+
+  passive: "Arc: Basic attacks deal an additional 40-80 magic damage. Every 3 basic attacks will unleash a chain lightning bolt, dealing 160-400 magic damage.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+40 Physical Attack",
+    "+35% Attack Speed",
+    "+7.5% Movement Speed"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.attackSpeed,
+    TAGS.movementSpeed,
+    TAGS.onHit,
+    TAGS.magicDamage
+  ],
+
+  sortStats: {
+    cost: 2040,
+
+    physicalAttack: 40,
+    spellAttack: 0,
+    attackSpeed: 35,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Bloodthirsty Blade",
+  chineseName: "",
+  category: "Physical Attack",
+  image: "images/bloodthirsty-blade.png",
+  price: 2020,
+
+  summary: "Sustain-focused bruiser item with strong lifesteal and bonus health scaling.",
+
+  description: "Provides high physical attack, physical lifesteal, and bonus health for durable sustained fighting. Its passives greatly increase skill lifesteal and convert excess healing into additional maximum health, allowing heroes with strong self-healing to become increasingly tanky over time.",
+
+  passive: "Battle Power: Increases physical skill lifesteal by 25%.",
+  passive2: "Overflow: 50% of the overflow health restored is converted into maximum health, with a maximum of 400~800 health.",
+  active: "",
+
+  stats: [
+    "+80 Physical Attack",
+    "+25% Physical Lifesteal",
+    "+500 maximum health"
+  ],
+
+  chips: [
+    TAGS.physicalAttack,
+    TAGS.physicalLifesteal,
+    TAGS.maxHp,
+    TAGS.healing,
+    TAGS.sustain
+  ],
+
+  sortStats: {
+    cost: 2020,
+
+    physicalAttack: 0,
+    spellAttack: 0,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 25,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
 /* ================================
    SPELL ATTACK ITEMS
 ================================ */

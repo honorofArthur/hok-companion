@@ -51,5 +51,6 @@ const TAGS = {
   invulnerability: "Invulnerability",
   outOfCombatMS: "Out of Combat MS",
   bonusDamage: "Bonus Damage",
-  summonerSpellCDR: "Summoner Spell CDR"
+  summonerSpellCDR: "Summoner Spell CDR",
+  damageReduction: "Damage Reduction"
 };
