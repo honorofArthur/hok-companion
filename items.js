@@ -1134,6 +1134,863 @@ const items = [
 }
 },
 
+{
+  name: "The Sage's Book",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/the-sage's-book.png",
+  price: 2610,
+
+  summary: "High spell attack item with cooldown reduction. Scales bonus damage and damage reduction from your spell attack.",
+
+  description: "Provides a large amount of spell attack and cooldown reduction. Its passive rewards high spell attack builds by granting bonus damage and damage reduction for every 100 spell attack you have, making it stronger as your total spell power increases.",
+
+  passive: "Imprint: Each 100 spell attacks grants a 0.5% damage increase and a 0.5% damage reduction.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+350 spell attack",
+    "+10% Cooldown Reduction",
+    ""
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.cooldown,
+    TAGS.damageIncrease,
+    TAGS.damageReduction
+  ],
+
+  sortStats: {
+    cost: 2610,
+
+    physicalAttack: 0,
+    spellAttack: 350,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 10,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Prophecy of Time",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/prophecy-of-time.png",
+  price: 2150,
+
+  summary: "Durable spell item with health, mana sustain, and scaling defenses.",
+
+  description: "Provides spell attack, maximum mana, and a large amount of health. The first passive restores health and mana after leveling up, giving strong sustain during the mid game. At max level, the effect becomes a timed recovery trigger. The second passive grants scaling physical and spell defense based on spell attack, making the item especially effective for battlemages and durable casters.",
+
+  passive: "Heroic Reward: After a hero levels up, they recover 20% of their maximum health and mana over 3 seconds. At max level, this effect triggers once every 45 seconds.",
+  passive2: "Prophecy: Gain 50~100 (+10% spell attack) physical and spell defense.",
+  active: "",
+
+  stats: [
+    "+140 Spell Attack",
+    "+450 Max Mana",
+    "+900 Max Health"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.maxMana,
+    TAGS.maxHp,
+    TAGS.spellDefense,
+    TAGS.physicalDefense
+  ],
+
+  sortStats: {
+    cost: 2150,
+
+    physicalAttack: 0,
+    spellAttack: 140,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 900,
+    maxMana: 450,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "The Wrath of the Scholar",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/the-wrath-of-the-scholar.png",
+  price: 2140,
+
+  summary: "Pure late-game spell damage item with massive spell attack amplification.",
+
+  description: "Provides a very high amount of spell attack and further amplifies total spell power through its passive, making it one of the strongest raw damage items for burst mages and scaling spellcasters.",
+
+  passive: "Destruction:Increase spell attack by 30%",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+210 spell attack",
+    "",
+    ""
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.damageIncrease
+  ],
+
+  sortStats: {
+    cost: 2140,
+
+    physicalAttack: 0,
+    spellAttack: 210,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Emerging from the Cocoon",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/emerging-from-the-cocoon.png",
+  price: 2120,
+
+  summary: "Tanky spell item that converts maximum health into bonus spell damage and spell penetration.",
+
+  description: "Provides spell attack and a large amount of health. Its passives scale from maximum health, granting bonus spell damage and spell penetration as your HP increases. Especially strong for battlemages, tanks with magic damage, and high-health spell builds.",
+
+  passive: "Emerging from the Cocoon: Gain spell damage equal to 20~40 + 2% of your maximum health, up to a maximum of 100.",
+  passive2: "Purge: Gain spell penetration of 30~60 + 3% bonus maximum health, up to a maximum of 150.",
+  active: "",
+
+  stats: [
+    "+120 spell attack",
+    "+900 Maximum Health",
+    ""
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.maxHp,
+    TAGS.spellPenetration,
+    TAGS.healthBasedDamage,
+    TAGS.healthBasedPenetration
+  ],
+
+  sortStats: {
+    cost: 2120,
+
+    physicalAttack: 0,
+    spellAttack: 120,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 900,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Breath of Ice",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/breath-of-ice.png",
+  price: 2100,
+
+  summary: "Durable utility mage item that adds slows and bonus magic damage on hit.",
+
+  description: "Provides spell power, cooldown reduction, and bonus health. Its passives allow skills and attacks to slow enemies while periodically dealing extra magic damage, making it strong for kiting, poke, and sustained teamfight control.",
+
+  passive: "Freeze: Basic attacks and skills will reduce movement speed by 5%~10% (stacks up to 2 times) for 1.5 seconds upon first hitting a target.",
+  passive2: "Frostbite: Basic attacks and skills deal (75~150 + 15% magic attack) magic damage to the target. Cooldown: 3 seconds.",
+  active: "",
+
+  stats: [
+    "+180 spell power",
+    "+7.5% cooldown reduction",
+    "+500 maximum health"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.cooldown,
+    TAGS.maxHp,
+    TAGS.slow,
+    TAGS.onHit,
+    TAGS.magicDamage
+  ],
+
+  sortStats: {
+    cost: 2100,
+
+    physicalAttack: 0,
+    spellAttack: 180,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 7.5,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Book of Devouring Gods",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/book-of-devouring-gods.png",
+  price: 2090,
+
+  summary: "Sustain-focused spell item with high spell vamp, health, and bonus cooldown reduction.",
+
+  description: "Provides spell attack, strong spell vamp, and bonus health to improve survivability during fights. Its passive converts spell vamp into additional cooldown reduction, making it especially effective for sustained damage mages and drain-style heroes.",
+
+  passive: "Spell Conversion: Each 2% spell vamp grants an additional 1% cooldown reduction.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+160 spell attack",
+    "+24% spell vamp",
+    "+750 maximum health"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.spellVamp,
+    TAGS.cooldown,
+    TAGS.maxHp
+  ],
+
+  sortStats: {
+    cost: 2090,
+
+    physicalAttack: 0,
+    spellAttack: 160,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 750,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 24,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Pain Mask",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/pain-mask.png",
+  price: 2080,
+
+  summary: "Tanky burn mage item that deals percentage current health magic damage over time.",
+
+  description: "Provides spell damage, cooldown reduction, and a large amount of health. Its passive causes abilities to inflict repeated percentage current health magic damage after hitting enemies, making it especially effective against high-health targets and frontline heroes.",
+
+  passive: "Torture: After the skill hits, the target will receive 4 instances of magic damage equal to 3% of their current health over 3 seconds (damage capped at 200 against monsters). Cooldown: 3 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+100 spell damage",
+    "+7.5% cooldown reduction",
+    "+900 maximum health"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.cooldown,
+    TAGS.maxHp,
+    TAGS.healthBasedDamage
+  ],
+
+  sortStats: {
+    cost: 2080,
+
+    physicalAttack: 0,
+    spellAttack: 100,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 900,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 7.5,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Shining Moon",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/shining-moon.png",
+  price: 2080,
+
+  summary: "Spell sustain item with stasis active for survival and outplay potential.",
+
+  description: "Provides spell damage, cooldown reduction, and spell vamp for sustained combat power. Its active grants brief complete immunity, allowing users to avoid burst damage, dodge abilities, or stall during fights at the cost of being unable to act.",
+
+  passive: "",
+  passive2: "",
+  active: "Moon Guardian: Immune to all effects, unable to move, attack, or use skills for 1.5 seconds. Cooldown: 75 seconds.",
+
+  stats: [
+    "+160 spell damage",
+    "+7.5% cooldown reduction",
+    "+12% spell vamp"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.cooldown,
+    TAGS.spellVamp,
+    TAGS.active,
+    TAGS.invulnerability
+  ],
+
+  sortStats: {
+    cost: 2080,
+
+    physicalAttack: 0,
+    spellAttack: 160,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 7.5,
+
+    physicalLifesteal: 0,
+    spellVamp: 12,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Witchcraft Staff",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/witchcraft-staff.png",
+  price: 2080,
+
+  summary: "Mobile burst mage item that empowers attacks after casting abilities.",
+
+  description: "Provides high spell attack, health, mana, and bonus movement speed for strong mobility and survivability. Its passive enhances the next basic attack after using a skill, dealing bonus magic damage and enabling powerful burst combos for spellcasters that weave attacks between abilities.",
+
+  passive: "Powerful Strike: After using the skill, the next basic attack within 5 seconds will deal an additional (180~360 + 40% magic attack) magic damage. Cooldown: 2.5 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+180 spell attack",
+    "+600 Max Health",
+    "+300 Max Mana",
+    "+7.5% movement speed"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.maxHp,
+    TAGS.maxMana,
+    TAGS.movementSpeed,
+    TAGS.onHit,
+    TAGS.magicDamage
+  ],
+
+  sortStats: {
+    cost: 2080,
+
+    physicalAttack: 0,
+    spellAttack: 180,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 600,
+    maxMana: 300,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Golden Holy Sword",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/golden-holy-sword.png",
+  price: 2070,
+
+  summary: "Attack-speed mage item that empowers repeated basic attacks with bonus magic damage.",
+
+  description: "Provides spell power, attack speed, and movement speed to support fast, sustained magic damage. Its passives increase basic attack damage and reward continuous attacks with stacking attack speed and additional magic damage, making it ideal for attack-based mages and hybrid spellcasters.",
+
+  passive: "Precision: Basic attack damage increased by 60 points",
+  passive2: "Holy Sword: Basic attacks that hit enemies grant 10% attack speed for 5 seconds, stacking up to 2 times; when fully stacked, basic attacks will deal additional magic damage equal to (30% magic attack). Cooldown: 0.2 seconds.",
+  active: "",
+
+  stats: [
+    "+150 spell power",
+    "+20% attack speed",
+    "+7.5% movement speed"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.attackSpeed,
+    TAGS.movementSpeed,
+    TAGS.onHit,
+    TAGS.magicDamage
+  ],
+
+  sortStats: {
+    cost: 2070,
+
+    physicalAttack: 0,
+    spellAttack: 150,
+    attackSpeed: 20,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Echoing Staff",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/echoing-staff.png",
+  price: 2050,
+
+  summary: "High burst mage item that adds explosive bonus damage to abilities.",
+
+  description: "Provides high spell attack and bonus movement speed for strong burst potential and mobility. Its passive causes abilities to trigger an area explosion on hit, dealing additional magic damage and improving poke, wave clear, and teamfight damage.",
+
+  passive: "Echo: The skill will trigger a small-area explosion upon hitting an enemy, dealing (140~280 + 28% magic attack) magic damage. Cooldown: 5 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+210 spell attack",
+    "+7.5% movement speed",
+    ""
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.movementSpeed,
+    TAGS.onHit,
+    TAGS.magicDamage
+  ],
+
+  sortStats: {
+    cost: 2050,
+
+    physicalAttack: 0,
+    spellAttack: 210,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Nightmare Fang",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/nightmare-fang.png",
+  price: 2050,
+
+  summary: "Utility mage item with anti-heal, mobility, and cooldown reduction.",
+
+  description: "Provides high spell damage, movement speed, and cooldown reduction for strong overall combat utility. Its passive applies anti-heal effects through attacks and skills, making it highly effective against heroes with strong healing, regeneration, or lifesteal.",
+
+  passive: "Grievous Injury: Basic attacks/skills reduce an enemy's health regeneration and lifesteal by 35% for 2.5 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+220 spell damage",
+    "7.5% movement speed",
+    "+7.5% cooldown reduction"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.movementSpeed,
+    TAGS.cooldown,
+    TAGS.antiHeal
+  ],
+
+  sortStats: {
+    cost: 2050,
+
+    physicalAttack: 0,
+    spellAttack: 220,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 7.5,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Sunset Stream",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/sunset-stream.png",
+  price: 2040,
+
+  summary: "Sustained combat mage item that builds stacking magic penetration during fights.",
+
+  description: "Provides spell attack, bonus health, and cooldown reduction for balanced offense and survivability. Its passive grants stacking magic penetration whenever you damage enemy heroes, allowing spellcasters to gradually break through magic defense during extended fights.",
+
+  passive: "Cleanse: Dealing damage to heroes grants 20-40 magic penetration for 4 seconds, and this effect can stack up to 6 times.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+160 Spell Attack",
+    "+500 Max Health",
+    "+10% Cooldown Reduction"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.maxHp,
+    TAGS.cooldown,
+    TAGS.magicPenetration
+  ],
+
+  sortStats: {
+    cost: 2040,
+
+    physicalAttack: 0,
+    spellAttack: 160,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 10,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Fiery Domination",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/fiery-domination.png",
+  price: 2040,
+
+  summary: "Defensive sustain mage item with emergency cleanse, shielding, and mobility.",
+
+  description: "Provides spell attack, spell vamp, and movement speed for strong sustain and repositioning. Its passive activates when critically low on health, cleansing crowd control, granting a large shield, and boosting movement speed to help survive burst damage or escape dangerous fights.",
+
+  passive: "Mana Shield: When health drops below 30%, immediately break free from crowd control and gain a shield equal to (500~1000 + 100% magic attack + 7.5% maximum health). The shield increases movement speed by 30% for 4 seconds. Cooldown: 90 seconds.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+150 spell attack",
+    "+12% Spell Vamp",
+    "+7.5 movement speed"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.spellVamp,
+    TAGS.movementSpeed, 
+    TAGS.shield,
+    TAGS.cleanse
+  ],
+
+  sortStats: {
+    cost: 2040,
+
+    physicalAttack: 0,
+    spellAttack: 150,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 0,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 7.5,
+    cdr: 0,
+
+    physicalLifesteal: 0,
+    spellVamp: 12,
+
+    tenacity: 0
+  }
+},
+
+  {
+  name: "Void Staff",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/void-staff.png",
+  price: 2040,
+
+  summary: "High-penetration mage item for breaking through magic defense.",
+
+  description: "Provides high magic attack, bonus health, and cooldown reduction for balanced offensive power and survivability. Its passive greatly increases spell penetration, making it especially effective against enemies stacking magic defense.",
+
+  passive: "Ruin: Increases spell penetration by 45%",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+210 Magic Attack",
+    "+500 Maximum Health",
+    "+5% Cooldown Reduction"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.maxHp,
+    TAGS.cooldown,
+    TAGS.spellPenetration
+  ],
+
+  sortStats: {
+    cost: 2040,
+
+    physicalAttack: 0,
+    spellAttack: 210,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 5,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
+{
+  name: "Holy Grail",
+  chineseName: "",
+  category: "Spell Attack",
+  image: "images/holy-grail.png",
+  price: 2020,
+
+  summary: "Sustain-focused mage item with continuous health and mana regeneration.",
+
+  description: "Provides spell power, cooldown reduction, and bonus health for balanced survivability and utility. Its passive grants constant mana and health regeneration, with additional healing when mana is full, making it especially effective for prolonged fights and poke-heavy playstyles.",
+
+  passive: "Mana Source: Restores 1.5% mana and 0.5% maximum health per second. If mana is full, restores an additional 0.5% maximum health per second.",
+  passive2: "",
+  active: "",
+
+  stats: [
+    "+150 spell power",
+    "+15% cooldown reduction",
+    "+500 maximum health"
+  ],
+
+  chips: [
+    TAGS.spellDamage,
+    TAGS.cooldown,
+    TAGS.maxHp,
+    TAGS.manaRegen,
+    TAGS.healthRegen
+  ],
+
+  sortStats: {
+    cost: 2020,
+
+    physicalAttack: 0,
+    spellAttack: 150,
+    attackSpeed: 0,
+    critChance: 0,
+    critDamage: 0,
+
+    maxHp: 500,
+    maxMana: 0,
+
+    physicalDefense: 0,
+    spellDefense: 0,
+
+    movementSpeed: 0,
+    cdr: 15,
+
+    physicalLifesteal: 0,
+    spellVamp: 0,
+
+    tenacity: 0
+  }
+},
+
 /* ================================
    DEFENCE ITEMS
 ================================ */
